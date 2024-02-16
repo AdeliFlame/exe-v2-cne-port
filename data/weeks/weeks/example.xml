@@ -1,0 +1,7 @@
+<!DOCTYPE codename-engine-week>
+<week name="!Example" chars="example,example,example" sprite="week7">
+	<song>Ugh</song>
+	<song>Guns</song>
+	<song>Stress</song>
+	<song hide="true">Test</song> <!-- use it for hide a song on the music list on the week list-->
+</week>

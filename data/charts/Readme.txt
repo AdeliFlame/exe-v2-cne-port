@@ -1,0 +1,1 @@
+Here's where the scripts that will applies in every song.

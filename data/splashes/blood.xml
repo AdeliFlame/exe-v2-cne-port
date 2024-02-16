@@ -1,0 +1,15 @@
+<!DOCTYPE codename-engine-splashes>
+<splashes sprite="game/splashes/blood/BloodSplash" alpha="1.0" scale="1.0"> 
+	<strum id="0"> <!-- LEFT -->
+		<anim name="Squirt" anim="Squirt" fps="24" x="0" y="0" />
+	</strum>
+	<strum id="1"> <!-- DOWN -->
+		<anim name="Squirt" anim="Squirt" fps="24" x="0" y="0" />
+	</strum>
+	<strum id="2"> <!-- UP -->
+		<anim name="Squirt" anim="Squirt" fps="24" x="0" y="0" />
+	</strum>
+	<strum id="3"> <!-- RIGHT -->
+		<anim name="Squirt" anim="Squirt" fps="24" x="0" y="0" />
+	</strum>
+</splashes>

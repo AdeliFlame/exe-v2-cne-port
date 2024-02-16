@@ -1,0 +1,1 @@
+Here will be the XMl and HX files. The XML files is where will be all the things that make the sprite work on game, like the poses, idle, etc.

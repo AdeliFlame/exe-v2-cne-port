@@ -1,0 +1,1 @@
+Here's where you put the weeks and the characters that appear when you select a week. You can also use the week.txt to classify the weeks but isnt that necessary.

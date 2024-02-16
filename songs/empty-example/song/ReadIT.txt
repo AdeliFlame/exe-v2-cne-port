@@ -1,0 +1,5 @@
+You put the: Inst | Voices.
+
+Also with you wanna put a song version for a difficulty, u put:
+
+Inst-Difficulty.
