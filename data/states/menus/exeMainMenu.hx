@@ -129,9 +129,10 @@ if (!FlxG.sound.music.playing)
 
 		firstStart = false;
 
-        var dataerase = new FlxText(FlxG.width - 300, FlxG.height - 18 * 2, 300, "Hold DEL to erase ALL data (this doesn't include ALL options)", 3);
+        var dataerase = new FlxText(FlxG.width - 300, FlxG.height - 16 * 2, 300, "Hold DEL to erase ALL data (this doesn't include ALL options)", 3);
 		dataerase.scrollFactor.set();
         dataerase.size = 13;
+		dataerase.setFormat(Paths.font("vcr.ttf"), 16, FlxColor.WHTIE);
 		add(dataerase);
 
      }
