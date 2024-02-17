@@ -14,6 +14,13 @@ import funkin.backend.utils.CoolUtil;
 import openfl.text.TextFormat;
 import flixel.text.FlxTextBorderStyle;
 
+public static var firstStart:Bool = true;
+public static var nightly:String = "";
+public static var kadeEngineVer:String = "1.5.4" + nightly;
+public static var gameVer:String = "0.2.7.1";
+public static var finishedFunnyMove:Bool = false;
+public var canAccessDebugMenus:Bool = true;
+
 var cancelCameraMove:Bool = false;
 var curSelected:Int = 0;
 var xval:Int = 100;
@@ -26,16 +33,10 @@ var soundCooldown:Bool = true;
 var optionShit:Array<String> = ['story mode', 'freeplay', 'options'];
 var newGaming:FlxText;
 var newGaming2:FlxText;
-public static var firstStart:Bool = true;
-public static var nightly:String = "";
-public static var kadeEngineVer:String = "1.5.4" + nightly;
-public static var gameVer:String = "0.2.7.1";
 var bgdesat:FlxSprite;
 var camFollow:FlxObject;
-public static var finishedFunnyMove:Bool = false;
 var spikeUp:FlxSprite;
 var spikeDown:FlxSprite;
-public var canAccessDebugMenus:Bool = true;
 
 function onCameraMove(e) if(cancelCameraMove) e.cancel();
 function create(){
