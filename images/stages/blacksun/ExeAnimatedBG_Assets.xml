@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="ExeAnimatedBG_Assets.png">
+	<!-- Created with Adobe Animate version 20.0.3.25487 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="ExeBGAnim0000" x="0" y="0" width="2560" height="1400"/>
+	<SubTexture name="ExeBGAnim0001" x="0" y="0" width="2560" height="1400"/>
+	<SubTexture name="ExeBGAnim0002" x="0" y="0" width="2560" height="1400"/>
+	<SubTexture name="ExeBGAnim0003" x="0" y="0" width="2560" height="1400"/>
+	<SubTexture name="ExeBGAnim0004" x="2560" y="0" width="2560" height="1400"/>
+	<SubTexture name="ExeBGAnim0005" x="2560" y="0" width="2560" height="1400"/>
+	<SubTexture name="ExeBGAnim0006" x="2560" y="0" width="2560" height="1400"/>
+	<SubTexture name="ExeBGAnim0007" x="2560" y="0" width="2560" height="1400"/>
+	<SubTexture name="ExeBGAnim0008" x="2560" y="0" width="2560" height="1400"/>
+	<SubTexture name="ExeBGAnim0009" x="2560" y="0" width="2560" height="1400"/>
+	<SubTexture name="ExeBGAnim0010" x="2560" y="0" width="2560" height="1400"/>
+	<SubTexture name="ExeBGAnim0011" x="2560" y="0" width="2560" height="1400"/>
+	<SubTexture name="ExeBGAnim0012" x="5120" y="0" width="2560" height="1400"/>
+	<SubTexture name="ExeBGAnim0013" x="5120" y="0" width="2560" height="1400"/>
+	<SubTexture name="ExeBGAnim0014" x="5120" y="0" width="2560" height="1400"/>
+	<SubTexture name="ExeBGAnim0015" x="5120" y="0" width="2560" height="1400"/>
+	<SubTexture name="ExeBGAnim0016" x="0" y="1400" width="2560" height="1400"/>
+	<SubTexture name="ExeBGAnim0017" x="0" y="1400" width="2560" height="1400"/>
+	<SubTexture name="ExeBGAnim0018" x="0" y="1400" width="2560" height="1400"/>
+	<SubTexture name="ExeBGAnim0019" x="0" y="1400" width="2560" height="1400"/>
+</TextureAtlas>
