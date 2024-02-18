@@ -6,6 +6,13 @@ var leftArrow2:FlxSprite;
 var rightArrow2:FlxSprite;
 var curdiff:Int = 2;
 var real:Int = 0;
+var curWeek:String = 'week1';
+var weekData:Dynamic = {
+	name: 'yup. grim reaper',
+	description: 'whats up guys',
+	difficuly: 'D-SIDE',
+	songs: []
+};
 var oneclickpls:Bool = true;
 var bfIDLELAWL:StoryModeMenuBFidle;
 var redBOX:FlxSprite;
@@ -14,8 +21,10 @@ var songArray = ['too-slow', 'you-cant-run', 'triple-trouble'];
 var staticscreen:FlxSprite;
 var portrait:FlxSprite;
 
+
 function create()
 {
+
 FlxG.sound.playMusic(Paths.music('storymodemenumusic'));
 var bg:FlxSprite;
 
@@ -154,21 +163,26 @@ function changeAct(diff:Int = 1)
 	{
 		if (FlxG.save.data.storyProgress != 0)
 		{
-			FlxG.sound.play(Paths.sound('scrollMenu'));
-
+		FlxG.sound.play(Paths.sound('scrollMenu'));
+        switch (diff)
+		{
+			case 1:
 			real += diff;
 			if (real < 0)
 				real = songArray.length - 1;
 			else if (real > songArray.length - 1)
 				real = 0;
 
-			portrait.loadGraphic(Paths.image('fpstuff/' + songArray[real]));
-
+			portrait.loadGraphic(Paths.image('fpstuff/you-cant-run'));
+            
 			FlxTween.cancelTweensOf(staticscreen);
 			staticscreen.alpha = 1;
 			FlxTween.tween(staticscreen, {alpha: 0.3}, 1);
+		case 2:
+		    portrait.loadGraphic(Paths.image('fpstuff/triple-trouble'));
 		}
 	}
+}
     function changeSelec()
 	{
 		selection = !selection;
@@ -188,6 +202,7 @@ function changeAct(diff:Int = 1)
 			rightArrow.setPosition(550 + 230, 600);
 		}
 	}
+
  function update(elapsed:Float)
 	{
         if (controls.LEFT && oneclickpls)
@@ -228,11 +243,27 @@ function changeAct(diff:Int = 1)
 		{
 			if (oneclickpls)
 			{
+		
 				oneclickpls = false;
 				var curDifficulty = '';
 
 				FlxG.sound.play(Paths.sound('confirmMenu'));
-
+                var convertedData = {
+					name: week1,
+					id: '',
+					sprite: '',
+					chars: [],
+					songs: [],
+					difficulties: [hard]
+				};
+				for (song in weekData.songs)
+					convertedData.songs.push({
+						name: song,
+						hide: false
+					});
+		
+					PlayState.loadWeek(convertedData, weekData.difficulty);
+					new FlxTimer().start(1, function() {FlxG.switchState(new PlayState());});
 			
 			if (FlxG.save.data.flashing)
 			{
