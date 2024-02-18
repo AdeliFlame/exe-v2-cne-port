@@ -14,13 +14,6 @@ import funkin.backend.utils.CoolUtil;
 import openfl.text.TextFormat;
 import flixel.text.FlxTextBorderStyle;
 
-public static var firstStart:Bool = true;
-public static var nightly:String = "";
-public static var kadeEngineVer:String = "1.5.4" + nightly;
-public static var gameVer:String = "0.2.7.1";
-public static var finishedFunnyMove:Bool = false;
-public var canAccessDebugMenus:Bool = true;
-
 var cancelCameraMove:Bool = false;
 var curSelected:Int = 0;
 var xval:Int = 100;
@@ -33,12 +26,19 @@ var soundCooldown:Bool = true;
 var optionShit:Array<String> = ['story mode', 'freeplay', 'options'];
 var newGaming:FlxText;
 var newGaming2:FlxText;
+public static var firstStart:Bool = true;
+public static var nightly:String = "";
+public static var kadeEngineVer:String = "1.5.4" + nightly;
+public static var gameVer:String = "0.2.7.1";
 var bgdesat:FlxSprite;
 var camFollow:FlxObject;
+public static var finishedFunnyMove:Bool = false;
 var spikeUp:FlxSprite;
 var spikeDown:FlxSprite;
+public var canAccessDebugMenus:Bool = true;
 
 function onCameraMove(e) if(cancelCameraMove) e.cancel();
+
 function create(){
  if (FlxG.save.data.soundTestUnlocked) optionShit.push('sound test');
 else optionShit.push('sound test locked');
@@ -82,10 +82,6 @@ spikeDown.scrollFactor.y = 0;
 spikeDown.updateHitbox();
 spikeDown.antialiasing = true;
 
-if (!FlxG.sound.music.playing)
-		{
-			FlxG.sound.playMusic(Paths.music('MainMenuMusic'));
-		}
 
 		FlxG.sound.playMusic(Paths.music('MainMenuMusic'));
 
@@ -113,14 +109,12 @@ if (!FlxG.sound.music.playing)
 						if(i == optionShit.length - 1)
 						{
 							finishedFunnyMove = true; 
-							changeItem();
-                            canSelect = true;
+							changeItem(1);
 						}
 					}});
 			else
 				menuItem.x = xval;
-            canSelect = true;
-
+            changeItem(1);
 			xval = xval + 220;
 		}
 
@@ -129,10 +123,9 @@ if (!FlxG.sound.music.playing)
 
 		firstStart = false;
 
-        var dataerase = new FlxText(FlxG.width - 300, FlxG.height - 16 * 2, 300, "Hold DEL to erase ALL data (this doesn't include ALL options)", 3);
+        var dataerase = new FlxText(FlxG.width - 300, FlxG.height - 18 * 2, 300, "Hold DEL to erase ALL data (this doesn't include ALL options)", 3);
 		dataerase.scrollFactor.set();
         dataerase.size = 13;
-		dataerase.setFormat(Paths.font("vcr.ttf"), 16, FlxColor.WHITE);
 		add(dataerase);
 
      }
@@ -192,24 +185,24 @@ if (canTween)
 				}
 			});
 		}
-        if (controls.UP_P && canSelect == true)
+        if (controls.UP_P)
         {
             changeItem(-1);
             FlxG.sound.play(Paths.sound('scrollMenu'));
         }
 
-        if (controls.DOWN_P && canSelect == true)
+        if (controls.DOWN_P)
         {
             changeItem(1);
         FlxG.sound.play(Paths.sound('scrollMenu'));
         }
-        if (controls.BACK && canSelect == true)
+        if (controls.BACK)
 			{
 				FlxG.switchState(new TitleState());
 
 			}
 
-     if (controls.ACCEPT && canSelect == true )
+     if (controls.ACCEPT )
 			{
 				if (optionShit[curSelected] == 'donate')
 				{
@@ -281,7 +274,7 @@ function goToState()
 				trace("Story Menu Selected");
 
 			case 'freeplay':
-				//FlxG.switchState(new FreeplayState());
+				FlxG.switchState(new FreeplayState());
 				trace("Freeplay Menu Selected");
 
 			case 'options':
@@ -296,7 +289,7 @@ function goToState()
 
 	function changeItem(huh:Int = 0)
 	{
-		if (finishedFunnyMove)
+		if (finishedFunnyMove )
 		{
 			curSelected += huh;
 
