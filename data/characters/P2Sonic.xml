@@ -1,0 +1,12 @@
+<!DOCTYPE codename-engine-character>
+<character x="0" icon="P2Sonic" y="0" isGF="false" color="#010065" isPlayer="false" sprite="P2Sonic">
+	<anim x="70" loop="false" y="120" fps="24" anim="NewPhase2Sonic Idle" name="idle"/>
+	<anim x="28" loop="false" y="104" fps="24" anim="NewPhase2Sonic Up" name="singUP"/>
+	<anim x="265" loop="false" y="-40" fps="24" anim="NewPhase2Sonic Left" name="singLEFT"/>
+	<anim x="30" loop="false" y="-50" fps="24" anim="NewPhase2Sonic Right" name="singRIGHT"/>
+	<anim x="35" loop="false" y="-5" fps="24" anim="NewPhase2Sonic Down" name="singDOWN"/>
+	<anim x="40" loop="false" y="60" fps="24" anim="NewPhase2Sonic Laugh" name="singUP-alt"/>
+	<anim x="40" loop="false" y="60" fps="24" anim="NewPhase2Sonic Laugh" name="singDOWN-alt"/>
+	<anim x="40" loop="false" y="60" fps="24" anim="NewPhase2Sonic Laugh" name="singLEFT-alt"/>
+	<anim x="40" loop="false" y="60" fps="24" anim="NewPhase2Sonic Laugh" name="singRIGHT-alt"/>
+</character>

@@ -1,0 +1,8 @@
+<!DOCTYPE codename-engine-character>
+<character x="0" icon="P2Sonic-pixel" y="-140" isGF="false" scale="10" color="#0048FF" isPlayer="false" antialiasing="false" sprite="P2Sonic-pixel">
+	<anim x="0" loop="false" y="0" fps="24" anim="Sonic_EXE_Pixel idle" name="idle"/>
+	<anim x="0" loop="false" y="0" fps="24" anim="Sonic_EXE_Pixel Sonic_EXE_Pixel NOTE LEFT" name="singLEFT"/>
+	<anim x="0" loop="false" y="0" fps="24" anim="Sonic_EXE_Pixel NOTE UP" name="singUP"/>
+	<anim x="0" loop="false" y="0" fps="24" anim="Sonic_EXE_Pixel NOTE RIGHT" name="singRIGHT"/>
+	<anim x="0" loop="false" y="0" fps="24" anim="Sonic_EXE_Pixel Sonic_EXE_Pixel NOTE DOWN" name="singDOWN"/>
+</character>

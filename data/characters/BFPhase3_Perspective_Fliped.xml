@@ -1,0 +1,12 @@
+<!DOCTYPE codename-engine-character>
+<character x="-200" icon="BOYFRIEND" y="400" camy="-100"camx="400" isGF="false" color="#2EB3D1" flipX="false" isPlayer="true" sprite="BFPhase3_Perspective_Flipped">
+	<anim x="5" loop="false" y="4" fps="24" anim="Idle" name="idle"/>
+	<anim x="23" loop="false" y="63" fps="24" anim="Sing_Up_Flip0" name="singUP"/>
+	<anim x="-75" loop="false" y="-15" fps="24" anim="Sing_Left_Flip" name="singRIGHT"/>
+	<anim x="31" loop="false" y="9" fps="24" anim="Sing_Right_Flip" name="singLEFT"/>
+	<anim x="-51" loop="false" y="-1" fps="24" anim="Sing_Down_Flip" name="singDOWN"/>
+	<anim x="20" loop="false" y="135" fps="24" anim="Up_Miss_Flip" name="singUPmiss"/>
+	<anim x="10" loop="false" y="92" fps="24" anim="Right_Miss_Flip" name="singLEFTmiss"/>
+	<anim x="-70" loop="false" y="85" fps="24" anim="Left_Miss_Flip" name="singRIGHTmiss"/>
+	<anim x="-53" loop="false" y="10" fps="24" anim="Down_Miss_Flip" name="singDOWNmiss"/>
+</character>

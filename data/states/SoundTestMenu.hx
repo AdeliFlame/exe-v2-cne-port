@@ -16,7 +16,7 @@ var daNO_NUMBER = new FlxText(FlxG.width / 6, FlxG.height / 2, 0, '0', 23);
 
 function create()
 {
-	
+	window.title = "Friday Night Funkin' Vs: Sonic.exe - Sound Test";
 new FlxTimer().start(0.1, function(tmr:FlxTimer)
 {
 	FlxG.sound.playMusic(Paths.music('breakfast'));
@@ -81,14 +81,14 @@ function changeNumber(selection:Int)
 		if (funnymonke)
 		{
 			pcmValue += selection;
-			if (pcmValue < 0) pcmValue = 69;
-			if (pcmValue > 69) pcmValue = 0;
+			if (pcmValue < 0) pcmValue = 99;
+			if (pcmValue > 99) pcmValue = 0;
 		}
 		else
 		{
 			daValue += selection;
-			if (daValue < 0) daValue = 37;
-			if (daValue > 37) daValue = 0;
+			if (daValue < 0) daValue = 99;
+			if (daValue > 99) daValue = 0;
 		}
 	}
 function flashyWashy(a:Bool)
@@ -123,6 +123,40 @@ function flashyWashy(a:Bool)
 			});
 			if (!FlxG.save.data.songArray.contains('endless') && !FlxG.save.data.botplay) FlxG.save.data.songArray.push('endless');
 		}
+		if (first == 85 && second == 29)
+			{
+            
+			woahmanstopspammin = false;
+		
+			flashyWashy(true);
+			PlayState.loadWeek({
+				name: "week1",
+				id: "week1",
+				sprite: null,
+				chars: [null, null, null],
+				songs: [for (song in ["you-cant-run"]) {name: song, hide: false}],
+				difficulties: ['hard']
+		    }, "hard");
+			new FlxTimer().start(1, function() {FlxG.switchState(new PlayState());});
+
+			}
+			if (first == 66 && second == 6)
+				{
+				
+				woahmanstopspammin = false;
+			
+				flashyWashy(true);
+				PlayState.loadWeek({
+					name: "week1",
+					id: "week1",
+					sprite: null,
+					chars: [null, null, null],
+					songs: [for (song in ["too-slow"]) {name: song, hide: false}],
+					difficulties: ['hard']
+				}, "hard");
+				new FlxTimer().start(1, function() {FlxG.switchState(new PlayState());});
+	
+				}
 		else if (first == 7 && second == 7)
 			{
 				woahmanstopspammin = false;

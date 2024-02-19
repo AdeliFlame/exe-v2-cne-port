@@ -1,0 +1,8 @@
+<!DOCTYPE codename-engine-character>
+<character x="0" icon="beast" y="-50" camx="-500" isGF="false" camy="50" flipX="true" color="#9090A4" isPlayer="false" sprite="beast">
+	<anim x="-13" loop="false" y="79" fps="24" anim="Beast_IDLE" name="idle"/>
+	<anim x="11" loop="false" y="156" fps="24" anim="Beast_UP" name="singUP"/>
+	<anim x="174" loop="false" y="-13" fps="24" anim="Beast_LEFT" name="singRIGHT"/>
+	<anim x="451" loop="false" y="24" fps="24" anim="Beast_RIGHT" name="singLEFT"/>
+	<anim x="4" loop="false" y="-15" fps="24" anim="Beast_DOWN" name="singDOWN"/>
+</character>

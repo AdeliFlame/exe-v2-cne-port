@@ -1,0 +1,9 @@
+<!DOCTYPE codename-engine-character>
+<character x="0" icon="egg" y="0" isGF="false" color="#9090A4" isPlayer="false" sprite="eggman_soul">
+	<anim x="-5" loop="false" y="5" fps="24" anim="Eggman_Idle" name="idle"/>
+	<anim x="110" loop="false" y="231" fps="24" anim="Eggman_Up" name="singUP"/>
+	<anim x="237" loop="false" y="97" fps="24" anim="Eggman_Left" name="singLEFT"/>
+	<anim x="40" loop="false" y="174" fps="24" anim="Eggman_Right" name="singRIGHT"/>
+	<anim x="49" loop="false" y="-95" fps="24" anim="Eggman_Down" name="singDOWN"/>
+	<anim x="-10" loop="false" y="210" fps="48" anim="Eggman_Laugh" name="laugh"/>
+</character>

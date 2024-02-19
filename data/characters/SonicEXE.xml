@@ -1,0 +1,11 @@
+<!DOCTYPE codename-engine-character>
+<character isPlayer="false" flipX="false" color="#0048FF" camx="0" camy="0" x="40" y="140">
+	<anim name="idle"          anim="SONICmoveIDLE"      fps="24" loop="true" x="0"  y="0"/>
+	<anim name="singUP"        anim="SONICmoveUP"        fps="24" loop="false" x="1" y="34"/>
+	<anim name="singLEFT"      anim="SONICmoveLEFT"      fps="24" loop="false" x="45"  y="-19"/>
+	<anim name="singRIGHT"     anim="SONICmoveRIGHT"     fps="24" loop="false" x="-2" y="0"/>
+	<anim name="singDOWN"      anim="SONICmoveDOWN"      fps="24" loop="false" x="43" y="-10"/>
+	<anim name="singDOWN-alt"      anim="SONIClaugh"      fps="24" loop="false" x="-10" y="-50"/>
+	<anim name="laugh"           anim="SONIClaugh"             fps="24" loop="false" x="2"   y="-9"/>
+	<anim name="Im_god"        anim="sonicImmagetya"    fps="24" loop="true"  x="62"  y="-9"/>
+</character>

@@ -43,6 +43,8 @@ function create(){
  if (FlxG.save.data.soundTestUnlocked) optionShit.push('sound test');
 else optionShit.push('sound test locked');
 
+window.title = "Friday Night Funkin' Vs: Sonic.exe - Main Menu";
+
 var bg:FlxSprite = new FlxSprite(-100).loadGraphic(Paths.image('backgroundlool'));
 bg.scrollFactor.x = 0;
 bg.scrollFactor.y = 0;
@@ -109,12 +111,12 @@ spikeDown.antialiasing = true;
 						if(i == optionShit.length - 1)
 						{
 							finishedFunnyMove = true; 
-							changeItem(1);
+							changeItem(4);
 						}
 					}});
 			else
 				menuItem.x = xval;
-            changeItem(1);
+            changeItem(4);
 			xval = xval + 220;
 		}
 
@@ -202,7 +204,7 @@ if (canTween)
 
 			}
 
-     if (controls.ACCEPT )
+     if (controls.ACCEPT)
 			{
 				if (optionShit[curSelected] == 'donate')
 				{
