@@ -1,0 +1,16 @@
+{
+	"beatsPerMeasure": 4,
+	"opponentModeAllowed": true,
+	"coopAllowed": true,
+	"stepsPerBeat": 4,
+	"bpm": 140,
+	"difficulties": [
+		"hard"
+	],
+	"needsVoices": true,
+	"parsedColor": -16711579,
+	"displayName": "you-cant-run",
+	"icon": "P2Sonic",
+	"name": "you-cant-run",
+	"color": "#010065"
+}

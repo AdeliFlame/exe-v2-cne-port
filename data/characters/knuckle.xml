@@ -1,0 +1,8 @@
+<!DOCTYPE codename-engine-character>
+<character x="0" icon="Knuckle" camx="-300" y="0" isGF="false" color="#9090A4" flipX="true" isPlayer="false" sprite="KnucklesEXE">
+	<anim x="0" loop="false" y="0" fps="24" anim="Knux Idle" name="idle"/>
+	<anim x="18" loop="false" y="44" fps="24" anim="Knux Up" name="singUP"/>
+	<anim x="171" loop="false" y="-62" fps="24" anim="Knux Right" name="singLEFT"/>
+	<anim x="-35" loop="false" y="-60" fps="24" anim="Knux Left" name="singRIGHT"/>
+	<anim x="75" loop="false" y="-100" fps="24" anim="Knux Down" name="singDOWN"/>
+</character>

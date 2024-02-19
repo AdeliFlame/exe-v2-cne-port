@@ -1,0 +1,79 @@
+Change Character.hx________PACKSEP________var preloadedCharacters = [];function postCreate() {
+	for (event in events) {
+		if (event.name == 'Change Character') {
+			var shit = strumLines.members[event.params[0]].characters[0];
+			var char = new Character(shit.x, shit.y, event.params[1], shit.isPlayer);
+			char.alpha = 0.001;
+			insert(members.indexOf(shit), char);
+			preloadedCharacters.push([char, strumLines.members[event.params[0]]]);
+		}
+	}
+}function onEvent(_) {
+	if (_.event.name == 'Change Character') {
+		var stuff = preloadedCharacters.pop();
+		var char = stuff[0];
+		var offsetarr = _.event.params[3] != null ? _.event.params[3].split(',') : null;
+		var offsetarr2 = _.event.params[5] != null ? _.event.params[5].split(',') : null;		stage.applyCharStuff(char, stuff[1].data.position, 1);
+		char.x = stuff[1].characters[0].x;
+		char.y = stuff[1].characters[0].y;
+		if (offsetarr != null) {
+			char.x += Std.parseFloat(offsetarr[0]);
+			char.y += Std.parseFloat(offsetarr[1]);
+		}
+		if (offsetarr2 != null) {
+			char.cameraOffset.x += Std.parseFloat(offsetarr2[0]);
+			char.cameraOffset.y += Std.parseFloat(offsetarr2[1]);
+		}
+		char.angle = stuff[1].characters[0].angle;
+		char.alpha = stuff[1].characters[0].alpha;
+		char.color = _.event.params[4] != false ? stuff[1].characters[0].color : 0xFFFFFFFF;
+		char.blend = stuff[1].characters[0].blend;		remove(stuff[1].characters[0]);
+		stuff[1].characters[0] = char;		if (_.event.params[2] || _.event.params[2] == null) {
+			if (stuff[1].opponentSide) {
+				var iconcams = iconP2.cameras;
+				remove(iconP2);
+				iconP2 = new HealthIcon(char.icon!=null?char.icon:char.curCharacter, false);
+				iconP2.y = healthBar.y - (iconP2.height / 2);
+				iconP2.cameras = iconcams;
+				iconP2.health = health;
+				insert(members.indexOf(healthBar)+1, iconP2);
+			} else {
+				var iconcams = iconP1.cameras;
+				remove(iconP1);
+				iconP1 = new HealthIcon(char.icon!=null?char.icon:char.curCharacter, true);
+				iconP1.y = healthBar.y - (iconP1.height / 2);
+				iconP1.cameras = iconcams;
+				iconP1.health = health;
+				insert(members.indexOf(healthBar)+1, iconP1);
+			}
+		}
+	}
+}________PACKSEP________{
+	"params": [
+		{
+			"name": "Strumline",
+			"type": "StrumLine",
+			"defaultValue": 0
+		}, {
+			"name": "To",
+			"type": "String",
+			"defaultValue": "dad"
+		}, {
+			"name": "Change Icon",
+			"type": "Bool",
+			"defaultValue": true
+		}, {
+			"name": "Position Offset (X,Y)",
+			"type": "String",
+			"defaultValue": "0,0"
+		}, {
+			"name": "Keep Color",
+			"type": "Bool",
+			"defaultValue": true
+		}, {
+			"name": "Camera Offset (X,Y)",
+			"type": "String",
+			"defaultValue": "0,0"
+		}
+	]
+}________PACKSEP________iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAACYktHRAD/h4/MvwAAAAlwSFlzAAAOwwAADsMBx2+oZAAAAAd0SU1FB+cFFBIDO1WKA9sAAABsSURBVCjPrZDNGYAwCENf/LqL3X8anQYPpX+0epJTSQIJlVFL/QmYAiqbeOSS1HX3JDBkJt8guxzOAJTuRJgOQlXvWqmANUqkW4aVCIIhvefJPnZEOqZJX9OwbFhveRHsTVs73rTNUD75L4sHOpMo02PY4u0AAAAldEVYdGRhdGU6Y3JlYXRlADIwMjMtMDUtMjBUMTg6MDM6MjArMDA6MDCxTFiqAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDIzLTA1LTIwVDE4OjAzOjIwKzAwOjAwwBHgFgAAACh0RVh0ZGF0ZTp0aW1lc3RhbXAAMjAyMy0wNS0yMFQxODowMzo1OSswMDowMAhZjQMAAAAASUVORK5CYII=

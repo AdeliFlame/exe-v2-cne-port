@@ -1,15 +1,8 @@
 <!DOCTYPE codename-mod-options>
-<!-- TEMPLATE FOR CUSTOM OPTIONS!!! -->
-<menu name="Mod Options" desc="Modify mod options here">
-	<checkbox id="checkboxExample" name="Checkbox example" />
-	<number id="numberExample" name="Number example" min="0" max="10" change="1"/>
-	<choice id="choiceExample" name="Choice Example">
-		<value name="Disabled" value="disabled" />
-		<value name="This Only" value="thisonly" />
-		<value name="All" value="all" />
-	</choice>
+<menu name="Sonic Options'" desc="Options for Vs Sonic.exe V2. Includes options for indievidual mods.">
 
-	<menu name="Submenu Example" desc="Submenu test">
-		<checkbox id="levelOfIdk2" name="Level of idk" />
+	<menu name="Hud" desc="Kade UI Options.">
+		<checkbox id="kadeUI" desc="Changes the UI into an older version Kade Engine."	name="Kade Engine UI"/>
+		<checkbox id="fastPress" desc="Gives the strum notes higher frames to mimick KE's bot note presses. Kade Engine UI option must be enabled for this to work!" name="Faster note press"/>
 	</menu>
 </menu>

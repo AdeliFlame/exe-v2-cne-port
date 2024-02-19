@@ -6,13 +6,6 @@ var leftArrow2:FlxSprite;
 var rightArrow2:FlxSprite;
 var curdiff:Int = 2;
 var real:Int = 0;
-var curWeek:String = 'week1';
-var weekData:Dynamic = {
-	name: 'yup. grim reaper',
-	description: 'whats up guys',
-	difficuly: 'D-SIDE',
-	songs: []
-};
 var oneclickpls:Bool = true;
 var bfIDLELAWL:StoryModeMenuBFidle;
 var redBOX:FlxSprite;
@@ -27,6 +20,9 @@ function create()
 
 FlxG.sound.playMusic(Paths.music('storymodemenumusic'));
 var bg:FlxSprite;
+
+
+
 
 bg = new FlxSprite(0, 0);
 bg.frames = Paths.getSparrowAtlas('meuns/story/SMMStatic');
@@ -88,187 +84,174 @@ redBOX.updateHitbox();
 add(redBOX);
 
 sprDifficulty = new FlxSprite(550, 600);
-		sprDifficulty.frames = Paths.getSparrowAtlas('meuns/story/campaign_menu_UI_assets');
-		sprDifficulty.animation.addByPrefix('easy', 'EASY');
-		sprDifficulty.animation.addByPrefix('normal', 'NORMAL');
-		sprDifficulty.animation.addByPrefix('hard', 'HARD');
-		sprDifficulty.animation.play('normal');
-		add(sprDifficulty);
+sprDifficulty.frames = Paths.getSparrowAtlas('meuns/story/campaign_menu_UI_assets');
+sprDifficulty.animation.addByPrefix('easy', 'EASY');
+sprDifficulty.animation.addByPrefix('normal', 'NORMAL');
+sprDifficulty.animation.addByPrefix('hard', 'HARD');
+sprDifficulty.animation.play('normal');
+add(sprDifficulty);
 
-		leftArrow = new FlxSprite(sprDifficulty.x - 150, sprDifficulty.y);
-		leftArrow.frames = Paths.getSparrowAtlas('meuns/story/campaign_menu_UI_assets');
-		leftArrow.setGraphicSize(Std.int(leftArrow.width * 0.8));
-		leftArrow.animation.addByPrefix('idle', "arrow left");
-		leftArrow.animation.addByPrefix('press', "arrow push left");
-		leftArrow.animation.play('idle');
-		add(leftArrow);
+leftArrow = new FlxSprite(sprDifficulty.x - 150, sprDifficulty.y);
+leftArrow.frames = Paths.getSparrowAtlas('meuns/story/campaign_menu_UI_assets');
+leftArrow.setGraphicSize(Std.int(leftArrow.width * 0.8));
+leftArrow.animation.addByPrefix('idle', "arrow left");
+leftArrow.animation.addByPrefix('press', "arrow push left");
+leftArrow.animation.play('idle');
+add(leftArrow);
 
-		rightArrow = new FlxSprite(sprDifficulty.x + 230, sprDifficulty.y);
-		rightArrow.frames = Paths.getSparrowAtlas('meuns/story/campaign_menu_UI_assets');
-		rightArrow.setGraphicSize(Std.int(rightArrow.width * 0.8));
-		rightArrow.animation.addByPrefix('idle', "arrow right");
-		rightArrow.animation.addByPrefix('press', "arrow push right");
-		rightArrow.animation.play('idle');
-		add(rightArrow);
+rightArrow = new FlxSprite(sprDifficulty.x + 230, sprDifficulty.y);
+rightArrow.frames = Paths.getSparrowAtlas('meuns/story/campaign_menu_UI_assets');
+rightArrow.setGraphicSize(Std.int(rightArrow.width * 0.8));
+rightArrow.animation.addByPrefix('idle', "arrow right");
+rightArrow.animation.addByPrefix('press', "arrow push right");
+rightArrow.animation.play('idle');
+add(rightArrow);
 
-		leftArrow2 = new FlxSprite(325, 136 + 5);
-		leftArrow2.frames = Paths.getSparrowAtlas('meuns/story/campaign_menu_UI_assets_alt');
-		leftArrow2.setGraphicSize(Std.int(leftArrow2.width * 0.8));
-		leftArrow2.animation.addByPrefix('idle', "arrow left");
-		leftArrow2.animation.addByPrefix('press', "arrow push left");
-		leftArrow2.animation.play('idle');
-		add(leftArrow2);
+leftArrow2 = new FlxSprite(325, 136 + 5);
+leftArrow2.frames = Paths.getSparrowAtlas('meuns/story/campaign_menu_UI_assets_alt');
+leftArrow2.setGraphicSize(Std.int(leftArrow2.width * 0.8));
+leftArrow2.animation.addByPrefix('idle', "arrow left");
+leftArrow2.animation.addByPrefix('press', "arrow push left");
+leftArrow2.animation.play('idle');
+add(leftArrow2);
 
-		rightArrow2 = new FlxSprite(820, 136 + 5);
-		rightArrow2.frames = Paths.getSparrowAtlas('meuns/story/campaign_menu_UI_assets_alt');
-		rightArrow2.setGraphicSize(Std.int(rightArrow2.width * 0.8));
-		rightArrow2.animation.addByPrefix('idle', "arrow right");
-		rightArrow2.animation.addByPrefix('press', "arrow push right");
-		rightArrow2.animation.play('idle');
-		add(rightArrow2);
+rightArrow2 = new FlxSprite(820, 136 + 5);
+rightArrow2.frames = Paths.getSparrowAtlas('meuns/story/campaign_menu_UI_assets_alt');
+rightArrow2.setGraphicSize(Std.int(rightArrow2.width * 0.8));
+rightArrow2.animation.addByPrefix('idle', "arrow right");
+rightArrow2.animation.addByPrefix('press', "arrow push right");
+rightArrow2.animation.play('idle');
+add(rightArrow2);
 
-		sprDifficulty.offset.x = 70;
-		sprDifficulty.y = leftArrow.y + 10;
+sprDifficulty.offset.x = 70;
+sprDifficulty.y = leftArrow.y + 10;
 
 
 }
 function changediff(diff:Int = 1)
+{
+curdiff += diff;
+
+if (curdiff == 0)
+	curdiff = 3;
+if (curdiff == 4)
+	curdiff = 1;
+
+FlxG.sound.play(Paths.sound('scrollMenu'));
+
+switch (curdiff)
+{
+	case 1:
+		sprDifficulty.animation.play('easy');
+		sprDifficulty.offset.x = 20;
+	case 2:
+		sprDifficulty.animation.play('normal');
+		sprDifficulty.offset.x = 70;
+	case 3:
+		sprDifficulty.animation.play('hard');
+		sprDifficulty.offset.x = 20;
+}
+sprDifficulty.alpha = 0;
+sprDifficulty.y = leftArrow.y - 15;
+FlxTween.tween(sprDifficulty, {y: leftArrow.y + 10, alpha: 1}, 0.07);
+}
+function changeAct(diff:Int = 0)
+{
+FlxG.sound.play(Paths.sound('scrollMenu'));
+switch (diff)
+{
+	case 0:
+	portrait.loadGraphic(Paths.image('fpstuff/you-cant-run'));
+	
+	FlxTween.cancelTweensOf(staticscreen);
+	staticscreen.alpha = 1;
+	FlxTween.tween(staticscreen, {alpha: 0.3}, 1);
+case 2:
+	portrait.loadGraphic(Paths.image('fpstuff/triple-trouble'));
+  } 
+ }
+
+function changeSelec()
+{
+	selection = !selection;
+
+	if (selection)
 	{
-		curdiff += diff;
-
-		if (curdiff == 0)
-			curdiff = 3;
-		if (curdiff == 4)
-			curdiff = 1;
-
-		FlxG.sound.play(Paths.sound('scrollMenu'));
-
-		switch (curdiff)
-		{
-			case 1:
-				sprDifficulty.animation.play('easy');
-				sprDifficulty.offset.x = 20;
-			case 2:
-				sprDifficulty.animation.play('normal');
-				sprDifficulty.offset.x = 70;
-			case 3:
-				sprDifficulty.animation.play('hard');
-				sprDifficulty.offset.x = 20;
-		}
-		sprDifficulty.alpha = 0;
-		sprDifficulty.y = leftArrow.y - 15;
-		FlxTween.tween(sprDifficulty, {y: leftArrow.y + 10, alpha: 1}, 0.07);
+		leftArrow.setPosition(345, 145);
+		rightArrow.setPosition(839, 145);
+		leftArrow2.setPosition(550 - 160 - 5, 600 - 2);
+		rightArrow2.setPosition(550 + 230 - 15, 600 - 2);
 	}
-function changeAct(diff:Int = 1)
+	else
 	{
-		if (FlxG.save.data.storyProgress != 0)
-		{
-		FlxG.sound.play(Paths.sound('scrollMenu'));
-        switch (diff)
-		{
-			case 1:
-			real += diff;
-			if (real < 0)
-				real = songArray.length - 1;
-			else if (real > songArray.length - 1)
-				real = 0;
-
-			portrait.loadGraphic(Paths.image('fpstuff/you-cant-run'));
-            
-			FlxTween.cancelTweensOf(staticscreen);
-			staticscreen.alpha = 1;
-			FlxTween.tween(staticscreen, {alpha: 0.3}, 1);
-		case 2:
-		    portrait.loadGraphic(Paths.image('fpstuff/triple-trouble'));
-		}
+		leftArrow2.setPosition(325, 136 + 5);
+		rightArrow2.setPosition(820, 136 + 5);
+		leftArrow.setPosition(550 - 150, 600);
+		rightArrow.setPosition(550 + 230, 600);
 	}
 }
-    function changeSelec()
-	{
-		selection = !selection;
 
+function update(elapsed:Float)
+{
+	if (controls.LEFT && oneclickpls)
+		leftArrow.animation.play('press');
+	else
+		leftArrow.animation.play('idle');
+
+	if (controls.LEFT_P && oneclickpls)
+	{
 		if (selection)
-		{
-			leftArrow.setPosition(345, 145);
-			rightArrow.setPosition(839, 145);
-			leftArrow2.setPosition(550 - 160 - 5, 600 - 2);
-			rightArrow2.setPosition(550 + 230 - 15, 600 - 2);
-		}
+			changeAct(-1);
 		else
-		{
-			leftArrow2.setPosition(325, 136 + 5);
-			rightArrow2.setPosition(820, 136 + 5);
-			leftArrow.setPosition(550 - 150, 600);
-			rightArrow.setPosition(550 + 230, 600);
-		}
+			changediff(-1);
 	}
 
- function update(elapsed:Float)
+	if (controls.RIGHT && oneclickpls)
+		rightArrow.animation.play('press');
+	else
+		rightArrow.animation.play('idle');
+
+	if (controls.RIGHT_P && oneclickpls)
 	{
-        if (controls.LEFT && oneclickpls)
-			leftArrow.animation.play('press');
+		if (selection)
+			changeAct(1);
 		else
-			leftArrow.animation.play('idle');
+			changediff(1);
+	}
 
-		if (controls.LEFT_P && oneclickpls)
+	if ((controls.UP_P && oneclickpls) || (controls.DOWN_P && oneclickpls))
+		changeSelec(); // i forgor how ifs work
+
+	if (controls.BACK && oneclickpls)
+	{
+		FlxG.sound.play(Paths.sound('cancelMenu'));
+		FlxG.switchState(new MainMenuState());
+	}
+	if (controls.ACCEPT)
+	{
+		if (oneclickpls)
 		{
-			if (selection)
-				changeAct(-1);
-			else
-				changediff(-1);
-		}
+	
+			oneclickpls = false;
+			var curDifficulty = '';
 
-		if (controls.RIGHT && oneclickpls)
-			rightArrow.animation.play('press');
-		else
-			rightArrow.animation.play('idle');
+			FlxG.sound.play(Paths.sound('confirmMenu'));
+			PlayState.loadWeek({
+				name: "week1",
+				id: "week1",
+				sprite: null,
+				chars: [null, null, null],
+				songs: [for (song in ["too-slow","you-cant-run","triple-trouble"]) {name: song, hide: false}],
+				difficulties: ['hard']
+		    }, "hard");
 
-		if (controls.RIGHT_P && oneclickpls)
-		{
-			if (selection)
-				changeAct(1);
-			else
-				changediff(1);
-		}
-
-		if ((controls.UP_P && oneclickpls) || (controls.DOWN_P && oneclickpls))
-			changeSelec(); // i forgor how ifs work
-
-		if (controls.BACK && oneclickpls)
-		{
-			FlxG.sound.play(Paths.sound('cancelMenu'));
-			FlxG.switchState(new MainMenuState());
-		}
-        if (controls.ACCEPT)
-		{
-			if (oneclickpls)
-			{
-		
-				oneclickpls = false;
-				var curDifficulty = '';
-
-				FlxG.sound.play(Paths.sound('confirmMenu'));
-                var convertedData = {
-					name: week1,
-					id: '',
-					sprite: '',
-					chars: [],
-					songs: [],
-					difficulties: [hard]
-				};
-				for (song in weekData.songs)
-					convertedData.songs.push({
-						name: song,
-						hide: false
-					});
-		
-					PlayState.loadWeek(convertedData, weekData.difficulty);
-					new FlxTimer().start(1, function() {FlxG.switchState(new PlayState());});
 			
-			if (FlxG.save.data.flashing)
-			{
-				FlxFlicker.flicker(redBOX, 1, 0.06, false, false, function(flick:FlxFlicker) {});
-			}
+				new FlxTimer().start(1, function() {FlxG.switchState(new PlayState());});
+		
+		if (FlxG.save.data.flashing)
+		{
+			FlxFlicker.flicker(redBOX, 1, 0.06, false, false, function(flick:FlxFlicker) {});
 		}
 	}
+ }
 }

@@ -28,7 +28,7 @@ function postUpdate() {
     if (poisoned) {
         if (health > 0.1) health -= 0.0125;
         if (health <= 0.1) health = 0;
-        new FlxTimer().start(0.2, stopP, .3);
+        new FlxTimer().start(0.5, stopP, .1);
     }
 }
 
