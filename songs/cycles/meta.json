@@ -1,0 +1,17 @@
+{
+	"beatsPerMeasure": 4,
+	"opponentModeAllowed": true,
+	"coopAllowed": true,
+	"stepsPerBeat": 4,
+	"bpm": 156,
+	"difficulties": [
+		"normal",
+		"hard"
+	],
+	"needsVoices": true,
+	"parsedColor": -16758529,
+	"displayName": "Cycles",
+	"icon": "lordx",
+	"name": "cycles",
+	"color": "#0048FF"
+}

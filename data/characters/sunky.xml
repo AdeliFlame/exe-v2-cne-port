@@ -1,0 +1,8 @@
+<!DOCTYPE codename-engine-character>
+<character x="0" icon="sunky" y="0" isGF="false" color="#122EEC" isPlayer="false" sprite="Sunky">
+	<anim x="0" loop="false" y="0" fps="24" anim="sunkyIDLE instance" name="idle"/>
+	<anim x="0" loop="false" y="0" fps="24" anim="sunkyUP instance" name="singUP"/>
+	<anim x="0" loop="false" y="0" fps="24" anim="sunkyLEFT instance" name="singLEFT"/>
+	<anim x="0" loop="false" y="0" fps="24" anim="sunkyRIGHT instance" name="singRIGHT"/>
+	<anim x="0" loop="false" y="0" fps="24" anim="sunkyDOWN instance" name="singDOWN"/>
+</character>
