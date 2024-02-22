@@ -1,11 +1,11 @@
 <!DOCTYPE codename-engine-character>
-<character isPlayer="false" flipX="false" color="#0048FF" camx="0" camy="0" x="40" y="140">
-	<anim name="idle"          anim="SONICmoveIDLE"      fps="24" loop="true" x="0"  y="0"/>
-	<anim name="singUP"        anim="SONICmoveUP"        fps="24" loop="false" x="1" y="34"/>
-	<anim name="singLEFT"      anim="SONICmoveLEFT"      fps="24" loop="false" x="45"  y="-19"/>
-	<anim name="singRIGHT"     anim="SONICmoveRIGHT"     fps="24" loop="false" x="-2" y="0"/>
-	<anim name="singDOWN"      anim="SONICmoveDOWN"      fps="24" loop="false" x="43" y="-10"/>
-	<anim name="singDOWN-alt"      anim="SONIClaugh"      fps="24" loop="false" x="-10" y="-50"/>
-	<anim name="laugh"           anim="SONIClaugh"             fps="24" loop="false" x="2"   y="-9"/>
-	<anim name="Im_god"        anim="sonicImmagetya"    fps="24" loop="true"  x="62"  y="-9"/>
+<character x="40" icon="SonicEXE" y="140" isGF="false" color="#0048FF" isPlayer="false" sprite="Sonic_EXE_Assets">
+	<anim x="0" loop="true" y="0" fps="24" anim="SONICmoveIDLE" name="idle"/>
+	<anim x="1" loop="false" y="34" fps="24" anim="SONICmoveUP" name="singUP"/>
+	<anim x="45" loop="false" y="-19" fps="24" anim="SONICmoveLEFT" name="singLEFT"/>
+	<anim x="-2" loop="false" y="0" fps="24" anim="SONICmoveRIGHT" name="singRIGHT"/>
+	<anim x="43" loop="false" y="-10" fps="24" anim="SONICmoveDOWN" name="singDOWN"/>
+	<anim x="-10" loop="false" y="-50" fps="24" anim="SONIClaugh" name="singDOWN-alt"/>
+	<anim x="2" loop="false" y="-9" fps="24" anim="SONIClaugh" name="laugh"/>
+	<anim x="62" loop="true" y="-9" fps="24" anim="sonicImmagetya" name="Im_god"/>
 </character>
