@@ -1,0 +1,8 @@
+<!DOCTYPE codename-engine-character>
+<character x="-100" icon="lordx" y="25" camy="150" camx="-50" isGF="false" color="#505c7d" scale="1.1" isPlayer="false" sprite="SONIC_X">
+	<anim x="0" loop="false" y="0" fps="24" anim="X_Idle instance" name="idle"/>
+	<anim x="27" loop="false" y="100" fps="24" anim="X_Up instance" name="singUP"/>
+	<anim x="11" loop="false" y="19" fps="24" anim="X_Left instance" name="singLEFT"/>
+	<anim x="-74" loop="false" y="31" fps="24" anim="X_Right instance" name="singRIGHT"/>
+	<anim x="64" loop="false" y="-18" fps="24" anim="X_Down instance" name="singDOWN"/>
+</character>

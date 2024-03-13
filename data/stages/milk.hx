@@ -14,11 +14,11 @@ function create(){
 	bg.active = false;
 	add(bg);
 
-	add(gf);
 	add(dad);
 	add(boyfriend);
 
-	dad.x = -180;
-	dad.y = 200;
-	boyfriend.x -= 100;
+	dad.x = -580;
+	dad.y = -150;
+	boyfriend.y = -250;
+	boyfriend.x = 350;
 }
