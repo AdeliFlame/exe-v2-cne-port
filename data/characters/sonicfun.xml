@@ -1,0 +1,8 @@
+<!DOCTYPE codename-engine-character>
+<character x="-100" icon="majin" camx="-50" y="50" isGF="false" camy="150" color="#000FE1" isPlayer="false" sprite="SonicFunAssets">
+	<anim x="0" loop="false" y="0" fps="24" anim="SONICFUNIDLE instance" name="idle"/>
+	<anim x="86" loop="false" y="14" fps="24" anim="SONICFUNUP instance" name="singUP"/>
+	<anim x="465" loop="false" y="-132" fps="24" anim="SONICFUNLEFT instance" name="singLEFT"/>
+	<anim x="-58" loop="false" y="-38" fps="24" anim="SONICFUNRIGHT instance" name="singRIGHT"/>
+	<anim x="121" loop="false" y="-129" fps="24" anim="SONICFUNDOWN instance" name="singDOWN"/>
+</character>
